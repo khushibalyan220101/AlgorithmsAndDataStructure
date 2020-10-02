@@ -1,11 +1,12 @@
-def fibonacci(n: int):
-    fibs = []
-    for i in range(n):
-        if i < 2:
-            fibs.append(i)
-        else:
-            fibs.append(fibs[i - 1] + fibs[i - 2])
-    return fibs
+def fibonacci(n):
+    if n<=0:
+        print("Incorrect input")
+    elif n<=len(FibArray):
+        return FibArray[n-1]
+    else:
+        temp_fib = fibonacci(n-1)+fibonacci(n-2)
+        FibArray.append(temp_fib)
+        return temp_fib
 
 
 if __name__ == "__main__":
